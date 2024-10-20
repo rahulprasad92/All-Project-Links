@@ -1,0 +1,92 @@
+body {
+  background-color: #f2f2f2;
+  text-align: center;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  height: 100vh;
+}
+.arith {
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 5px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.opt {
+  padding: 10px 35px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0;
+  border-radius: 10px;
+}
+#adding {
+  background-color: purple;
+}
+#subs {
+  background-color: darkred;
+}
+#multi {
+  background-color: darkgreen;
+}
+#div {
+  background-color: blue;
+}
+
+.imgSlide {
+  color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 3px;
+  margin-top: 0;
+}
+.slideshow {
+  position: relative;
+  max-width: 700px;
+  max-height: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+.slides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.active {
+  display: block;
+}
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.buttons {
+  margin-top: 10px;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 2px;
+  padding: 5px 30px;
+  font-size: 17px;
+  margin: 5px 20px;
+  cursor: pointer;
+}
+#previmg {
+  background-color: orangered;
+}
+#nextimg {
+  background-color: green;
+}
+#result {
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  letter-spacing: 5px;
+}

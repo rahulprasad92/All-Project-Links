@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My IWT Lab Assignments</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(to right, #f4f4f9, #d3d3d3);
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #33006f;
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        animation: slideIn 1.5s ease-out;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #00ffff;
+      }
+
+      section {
+        padding: 2rem;
+        margin: 1.5rem auto;
+        width: 80%;
+      }
+
+      .assignment-card {
+        background-color: #FFC0CB;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin: 20px 0;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease;
+      }
+
+      .assignment-card:hover {
+        transform: translateY(-5px);
+        background-color: #FF69B4;
+      }
+
+      .assignment-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        margin-right: 20px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .assignment-content {
+        flex: 1;
+      }
+
+      h2 {
+        color: #33006f;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .view-assignment {
+        background-color: #00ffff;
+        color: #000;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .view-assignment:hover {
+        background-color: #33006f;
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      footer {
+        background-color: #33006f;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      footer a {
+        color: #00ffff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      .social {
+        margin-top: 1rem;
+      }
+
+      .social a {
+        color: white;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .social a:hover {
+        color: #00ffff;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      #backToTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #33006f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        font-size: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #backToTop:hover {
+        background-color: #00ffff;
+      }
+
+      body.dark-theme {
+        background-color: #333;
+        color: #fff;
+      }
+
+      body.dark-theme header,
+      body.dark-theme footer {
+        background-color: #000;
+      }
+
+      body.dark-theme section {
+        background-color: #444;
+      }
+
+      #themeSwitcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: blueviolet;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 200; /* Increased z-index to ensure it appears above other content */
+      }
+
+      #themeSwitcher:hover {
+        background-color: #00ffff;
+      }
+
+      nav ul li a.active {
+        border-bottom: 2px solid #00ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My IWT Lab Assignments</h1>
+      <nav>
+        <ul>
+          <li><a href="#assignments">Assignments</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="assignments">
+      <h2>Lab Assignments</h2>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 1 : Portfolio 😊</h3>
+          <p>
+            Create your own portfolio using HTML. USing the mentioned tags in
+            the page is must. Within the body use the following tags.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='portfolio.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 2 : Table Formation 😊</h3>
+          <p>
+            Formation of Table using HTML & CSS properties. It includes
+            interactive elements to enhance user experience.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='table.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 3 : Student Registration Form 😊</h3>
+          <p>
+            Creating a Student Registration HTML form. The details asked should
+            be : First Name, Last Name, Email etc.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='form.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 4 : Linking Multiple Pages 😊</h3>
+          <p>
+            Linking multiple Webpages together. One page must open the table
+            created in the previos assignment.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='link.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 5 : Working with Div & ID's 😊</h3>
+          <p>
+            Working with HTML div and ID. On the existing Webpage, create
+            multiple divisions and classes. Apply CSS Box Model etc.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='link.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 6 : Design a Question Paper 😊</h3>
+          <p>
+            Design question paper of ten questions of yourself using CSS styling
+            (background, text format, fonts) and some CSS colours.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='Quiz.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 7 : JavaScript Basics 😊</h3>
+          <p>
+            Insert various JavaScript syntax. Create dialog boxes using
+            JavaScript use them in the question paper created in last
+            Assignment.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='QuizNew.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+
+      <div class="assignment-card">
+        <div
+          class="assignment-image"
+          style="background-image: url('logo.jpg');"
+        ></div>
+        <div class="assignment-content">
+          <h3>Lab Assignment 8 : JavaScript Functionality 😊</h3>
+          <p>
+            Create various user defined functions to perform some arithmatic
+            operations and make a Image Slide uing JavaScript.
+          </p>
+          <button
+            class="view-assignment"
+            onclick="location.href='ImageSlider.html'"
+          >
+            View Assignment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <p>
+        Contact me at
+        <a href="mailto:your-email@example.com">rahulprasad9312@gmail.com</a>
+      </p>
+      <div class="social">
+        <a href="https://github.com/rahulprasad92/All-Projects-Links.git"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/rahul-prasad-572a4b289/"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      "use strict";
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      const backToTopButton = document.createElement("button");
+      backToTopButton.innerText = "⬆ Back to Top";
+      backToTopButton.id = "backToTop";
+      document.body.appendChild(backToTopButton);
+
+      window.onscroll = function () {
+        if (window.scrollY > 200) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      };
+
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      const themeSwitcher = document.createElement("button");
+      themeSwitcher.innerText = "Toggle Theme";
+      themeSwitcher.id = "themeSwitcher";
+      document.body.appendChild(themeSwitcher);
+
+      themeSwitcher.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+      });
+
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      window.addEventListener("scroll", () => {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 50) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").includes(currentSection)) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      console.log(
+        "Welcome to My IWT Lab Assignments Website! Interactivity enhanced with JavaScript."
+      );
+    </script>
+  </body>
+</html>
